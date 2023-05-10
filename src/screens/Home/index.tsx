@@ -1,7 +1,11 @@
-import { Text, TextInput, View } from 'react-native'
+import { Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { styles } from './styles'
 
 export function Home() {
+  function handleParticipantAdd() {
+    console.log('Você clicou no botão de Adicionar')
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.eventName}>Hello World!</Text>
@@ -12,6 +16,10 @@ export function Home() {
         placeholder="Nome ddo participante"
         placeholderTextColor="#6a6a6a"
       />
+
+      <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
+        <Text style={styles.buttonText}>+</Text>
+      </TouchableOpacity>
     </View>
   )
 }
